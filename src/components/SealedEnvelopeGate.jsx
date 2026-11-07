@@ -11,7 +11,7 @@ import {
  */
 function GoldenEmbossedWaxSeal() {
   return (
-    <div className="relative inline-flex items-center justify-center w-28 h-28 sm:w-32 sm:h-32 select-none">
+    <div className="relative inline-flex items-center justify-center w-24 h-24 sm:w-32 sm:h-32 select-none">
       <svg
         viewBox="0 0 140 155"
         className="w-full h-full overflow-visible drop-shadow-[0_12px_22px_rgba(110,75,10,0.42)]"
@@ -158,13 +158,13 @@ export function SealedEnvelopeGate({
     >
       {/* Center Royal Invitation Card with Realistic Curtains ONLY in the Top Corners of This Box */}
       <div
-        className={`relative z-20 max-w-2xl w-full my-auto mx-2 px-5 pt-10 pb-7 sm:px-10 sm:pt-12 sm:pb-9 ivory-card-surface gold-border-double rounded-3xl shadow-royal-lg text-center overflow-hidden transition-all duration-1000 ${
+        className={`relative z-20 max-w-2xl w-full my-auto mx-2 px-4 pt-6 pb-4 sm:px-10 sm:pt-12 sm:pb-9 ivory-card-surface gold-border-double rounded-3xl shadow-royal-lg text-center overflow-hidden transition-all duration-1000 ${
           isOpening ? 'scale-105 opacity-0 translate-y-4' : 'scale-100 opacity-100'
         }`}
       >
         {/* Top-Left & Top-Right Realistic Half-Covering Corner Curtains Inside the Box */}
         <div
-          className={`absolute top-0 left-0 w-40 sm:w-52 md:w-64 z-30 pointer-events-none select-none drop-shadow-[0_10px_18px_rgba(110,75,15,0.28)] ${
+          className={`absolute top-0 left-0 w-32 sm:w-52 md:w-64 z-30 pointer-events-none select-none drop-shadow-[0_10px_18px_rgba(110,75,15,0.28)] ${
             isOpening ? 'corner-curtain-opened-left' : 'corner-curtain-idle-left'
           }`}
         >
@@ -176,7 +176,7 @@ export function SealedEnvelopeGate({
         </div>
 
         <div
-          className={`absolute top-0 right-0 w-40 sm:w-52 md:w-64 z-30 pointer-events-none select-none drop-shadow-[0_10px_18px_rgba(110,75,15,0.28)] ${
+          className={`absolute top-0 right-0 w-32 sm:w-52 md:w-64 z-30 pointer-events-none select-none drop-shadow-[0_10px_18px_rgba(110,75,15,0.28)] ${
             isOpening ? 'corner-curtain-opened-right' : 'corner-curtain-idle-right'
           }`}
         >
@@ -192,30 +192,30 @@ export function SealedEnvelopeGate({
 
         <div className="relative z-20">
           {/* Bismillah Header — Full Unclipped Diacritics (zer, zabar, pesh) */}
-          <div className="pt-1 pb-1 overflow-visible">
+          <div className="pt-0.5 pb-0.5 overflow-visible">
             <p
               dir="rtl"
               lang="ar"
-              className="font-arabic text-2xl sm:text-3xl gold-foil-text font-bold arabic-calligraphy-safe"
+              className="font-arabic text-xl sm:text-3xl gold-foil-text font-bold arabic-calligraphy-safe"
             >
               {weddingData.invitationCopy.bismillahArabic}
             </p>
           </div>
-          <p className="text-[10px] sm:text-xs font-sans uppercase tracking-[0.25em] text-espresso-muted font-bold">
+          <p className="text-[9px] sm:text-xs font-sans uppercase tracking-[0.22em] text-espresso-muted font-bold">
             The Royal Wedding Celebration Of
           </p>
 
           {/* Animated Love Birds Crest */}
-          <div className="flex justify-center -my-3">
+          <div className="flex justify-center -my-3.5 sm:-my-3">
             <LoveBirdsPair size="sm" showHeart={true} />
           </div>
 
           {/* Groom & Bride Small Cameo Portraits + Names on the Curtain Cover Step */}
-          <div className="mt-2 mb-5 grid grid-cols-1 sm:grid-cols-11 gap-3 sm:gap-2 items-center">
+          <div className="mt-1 mb-3 sm:mt-2 sm:mb-5 grid grid-cols-11 gap-1 sm:gap-2 items-center">
             {/* Groom Small Portrait & Lineage */}
-            <div className="sm:col-span-5 flex flex-col items-center">
-              <div className="relative mb-2">
-                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 gold-foil-bg shadow-royal">
+            <div className="col-span-5 flex flex-col items-center">
+              <div className="relative mb-1.5 sm:mb-2">
+                <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-full p-1 gold-foil-bg shadow-royal">
                   <div className="w-full h-full rounded-full overflow-hidden bg-ivory-pearl border-2 border-ivory-pearl">
                     <img
                       src={coupleImg}
@@ -225,29 +225,29 @@ export function SealedEnvelopeGate({
                     />
                   </div>
                 </div>
-                <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full gold-foil-bg text-[9px] font-sans uppercase tracking-widest font-bold whitespace-nowrap shadow">
+                <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 px-2 sm:px-2.5 py-0.5 rounded-full gold-foil-bg text-[8px] sm:text-[9px] font-sans uppercase tracking-widest font-bold whitespace-nowrap shadow">
                   The Groom
                 </span>
               </div>
-              <h1 className="font-display text-xl sm:text-2xl font-bold gold-foil-text tracking-wide mt-1 py-0.5">
+              <h1 className="font-display text-base sm:text-2xl font-bold gold-foil-text tracking-wide mt-0.5 sm:mt-1 py-0.5 leading-tight">
                 {weddingData.groom.name}
               </h1>
-              <p className="text-xs font-serif italic text-espresso-muted font-medium">
+              <p className="text-[10px] sm:text-xs font-serif italic text-espresso-muted font-medium leading-tight">
                 ({weddingData.groom.shortPrefix} {weddingData.groom.fatherName})
               </p>
             </div>
 
             {/* Center Weds Emblem */}
-            <div className="sm:col-span-1 flex flex-col items-center justify-center">
-              <span className="font-script text-2xl sm:text-3xl text-gold-deep font-bold">
+            <div className="col-span-1 flex flex-col items-center justify-center">
+              <span className="font-script text-xl sm:text-3xl text-gold-deep font-bold">
                 weds
               </span>
             </div>
 
             {/* Bride Small Portrait & Lineage */}
-            <div className="sm:col-span-5 flex flex-col items-center">
-              <div className="relative mb-2">
-                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 gold-foil-bg shadow-royal">
+            <div className="col-span-5 flex flex-col items-center">
+              <div className="relative mb-1.5 sm:mb-2">
+                <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-full p-1 gold-foil-bg shadow-royal">
                   <div className="w-full h-full rounded-full overflow-hidden bg-ivory-pearl border-2 border-ivory-pearl">
                     <img
                       src={coupleImg}
@@ -257,33 +257,33 @@ export function SealedEnvelopeGate({
                     />
                   </div>
                 </div>
-                <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full gold-foil-bg text-[9px] font-sans uppercase tracking-widest font-bold whitespace-nowrap shadow">
+                <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 px-2 sm:px-2.5 py-0.5 rounded-full gold-foil-bg text-[8px] sm:text-[9px] font-sans uppercase tracking-widest font-bold whitespace-nowrap shadow">
                   The Bride
                 </span>
               </div>
-              <h1 className="font-display text-xl sm:text-2xl font-bold gold-foil-text tracking-wide mt-1 py-0.5">
+              <h1 className="font-display text-base sm:text-2xl font-bold gold-foil-text tracking-wide mt-0.5 sm:mt-1 py-0.5 leading-tight">
                 {weddingData.bride.name}
               </h1>
-              <p className="text-xs font-serif italic text-espresso-muted font-medium">
+              <p className="text-[10px] sm:text-xs font-serif italic text-espresso-muted font-medium leading-tight">
                 ({weddingData.bride.shortPrefix} {weddingData.bride.fatherName})
               </p>
             </div>
           </div>
 
           {/* Personalized Guest VIP Nameplate with Corner Filigree */}
-          <div className="relative mx-auto max-w-md mb-4 px-5 py-3.5 rounded-2xl bg-gradient-to-r from-ivory-warm via-ivory-pearl to-ivory-warm border-2 border-gold-DEFAULT/75 shadow-sm overflow-hidden">
+          <div className="relative mx-auto max-w-md mb-2.5 sm:mb-4 px-4 py-2 sm:px-5 sm:py-3.5 rounded-2xl bg-gradient-to-r from-ivory-warm via-ivory-pearl to-ivory-warm border-2 border-gold-DEFAULT/75 shadow-sm overflow-hidden">
             <PremiumBoxCorners size="sm" offset="inset-0.5" />
             <div className="relative z-10">
-              <div className="flex items-center justify-center gap-1.5 text-[11px] font-sans uppercase tracking-[0.22em] text-gold-deep font-bold mb-0.5">
-                <Crown className="w-3.5 h-3.5 text-gold-DEFAULT" />
+              <div className="flex items-center justify-center gap-1.5 text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.22em] text-gold-deep font-bold mb-0.5">
+                <Crown className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-gold-DEFAULT" />
                 <span>Exclusively Invited</span>
-                <Crown className="w-3.5 h-3.5 text-gold-DEFAULT" />
+                <Crown className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-gold-DEFAULT" />
               </div>
-              <p className="font-display text-lg sm:text-2xl font-bold text-espresso tracking-wide">
+              <p className="font-display text-base sm:text-2xl font-bold text-espresso tracking-wide leading-snug">
                 {fullGuestDisplay}
               </p>
               {guestProfile.party && (
-                <span className="inline-block mt-1 px-3.5 py-0.5 rounded-full gold-foil-bg text-ivory-pearl text-xs font-sans font-semibold shadow-sm">
+                <span className="inline-block mt-0.5 sm:mt-1 px-3 py-0.5 rounded-full gold-foil-bg text-ivory-pearl text-[10px] sm:text-xs font-sans font-semibold shadow-sm">
                   {guestProfile.party}
                 </span>
               )}
@@ -302,14 +302,14 @@ export function SealedEnvelopeGate({
               </div>
 
               {/* Balanced Rich 22K Gold CTA Bar Below Golden Wax Seal */}
-              <div className="mt-2 inline-flex items-center gap-2.5 px-7 py-3 rounded-full gold-foil-bg text-ivory-pearl font-sans text-xs sm:text-sm font-bold uppercase tracking-[0.18em] shadow-royal-lg group-hover:scale-[1.02] transition-all">
+              <div className="mt-1 sm:mt-2 inline-flex items-center gap-2 px-5 py-2.5 sm:px-7 sm:py-3 rounded-full gold-foil-bg text-ivory-pearl font-sans text-xs sm:text-sm font-bold uppercase tracking-[0.16em] sm:tracking-[0.18em] shadow-royal-lg group-hover:scale-[1.02] transition-all">
                 <Sparkles className="w-4 h-4 text-[#FFF3D1]" />
-                <span>Open Royal Invitation</span>
+                <span>Open Wedding Invitation</span>
                 <Volume2 className="w-4 h-4 text-[#FFF3D1] animate-pulse" />
               </div>
             </button>
 
-            <p className="mt-2.5 text-xs font-serif italic text-espresso-muted font-medium">
+            <p className="mt-1.5 sm:mt-2.5 text-[11px] sm:text-xs font-serif italic text-espresso-muted font-medium">
               Opens Curtains with Floral Shower, Royal Fireworks &amp; Sacred Quranic Tilawat
             </p>
           </div>
