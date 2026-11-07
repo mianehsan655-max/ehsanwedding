@@ -663,7 +663,7 @@ export default function App() {
               </p>
             </div>
 
-            {/* Secret Black Circle Dot Button in the Lower-Most Right Corner of the Last Bottom Card */}
+            {/* Secret Golden Circle Dot Button in the Lower-Most Right Corner of the Last Bottom Card */}
             {isHostSession && (
               <button
                 type="button"
@@ -673,7 +673,7 @@ export default function App() {
                   setIsHostDrawerOpen(true);
                 }}
                 aria-label="Host"
-                className="absolute bottom-3.5 right-3.5 z-30 w-2.5 h-2.5 rounded-full bg-black cursor-pointer focus:outline-none"
+                className="absolute bottom-3.5 right-3.5 z-30 w-2.5 h-2.5 rounded-full bg-gold-DEFAULT cursor-pointer focus:outline-none"
               />
             )}
           </div>
