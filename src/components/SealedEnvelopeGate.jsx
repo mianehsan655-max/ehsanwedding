@@ -134,8 +134,6 @@ export function SealedEnvelopeGate({
   guestProfile,
   weddingData,
   portraitUrl,
-  isHostSession,
-  onOpenHostMode,
 }) {
   if (isOpen && !isOpening) {
     return null;
@@ -158,19 +156,6 @@ export function SealedEnvelopeGate({
           'radial-gradient(circle at 50% 35%, rgba(255, 253, 249, 0.99) 0%, rgba(250, 246, 238, 0.99) 65%, rgba(238, 226, 204, 1) 100%)',
       }}
     >
-      {/* Host Mode Button on the Main Opening Screen (Only visible to the Host, hidden for Guests) */}
-      {isHostSession && (
-        <div className="fixed top-3 right-3 sm:top-5 sm:right-6 z-50">
-          <button
-            type="button"
-            onClick={onOpenHostMode}
-            className="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl gold-foil-bg text-ivory-pearl font-sans text-xs font-bold uppercase tracking-wider shadow-royal-lg hover:opacity-95 transition flex items-center gap-1.5 border border-[#FFF3D1]/60"
-          >
-            <Crown className="w-4 h-4 text-[#FFE8AD] shrink-0" />
-            <span>Host Mode</span>
-          </button>
-        </div>
-      )}
       {/* Center Royal Invitation Card with Realistic Curtains ONLY in the Top Corners of This Box */}
       <div
         className={`relative z-20 max-w-2xl w-full my-auto mx-2 px-5 pt-10 pb-7 sm:px-10 sm:pt-12 sm:pb-9 ivory-card-surface gold-border-double rounded-3xl shadow-royal-lg text-center overflow-hidden transition-all duration-1000 ${
