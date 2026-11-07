@@ -20,6 +20,8 @@ import { signGuestParams } from '../utils/calendarAndCardExport';
 const HONORIFIC_OPTIONS = [
   'Respected',
   'Honorable',
+  'Mr.',
+  'Mrs.',
   'Mr. & Mrs.',
   'Mian',
   'Chaudhry',
@@ -27,6 +29,7 @@ const HONORIFIC_OPTIONS = [
   'Dr.',
   'Engr.',
   'Dear',
+  '.',
   '',
 ];
 
