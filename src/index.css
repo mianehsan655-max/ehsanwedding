@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-ivory: #FAF6EE;
+    --bg-pearl: #FFFDF9;
+    --gold-metallic: #B38728;
+    --gold-deep: #8A6012;
+    --espresso: #281D12;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #FAF6EE;
+  }
+
+  body {
+    background: radial-gradient(circle at 50% 0%, #FFFDF9 0%, #FAF6EE 62%, #EFE5D4 100%);
+    color: #281D12;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+/* Balanced Rich 22K Royal Gold Typography (Darker than v1, Brighter & More Golden than v2) */
+.gold-foil-text {
+  background: linear-gradient(
+    135deg,
+    #7A5410 0%,
+    #B38728 22%,
+    #DEAD48 46%,
+    #A87B1E 66%,
+    #CFA038 84%,
+    #734E0C 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: goldShimmer 7s ease-in-out infinite;
+}
+
+/* Prevents WebKit background-clip:text from clipping Arabic harakat (zer, zabar, pesh, shaddah) */
+.arabic-calligraphy-safe {
+  display: inline-block;
+  line-height: 2.35 !important;
+  padding-top: 0.42em !important;
+  padding-bottom: 0.42em !important;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  overflow: visible !important;
+}
+
+/* Balanced Rich 22K Royal Gold Button Surface (Warm Metallic Gold + Clear White Text) */
+.gold-foil-bg {
+  background: linear-gradient(
+    135deg,
+    #8A6012 0%,
+    #B58826 28%,
+    #CFA33E 50%,
+    #AC7E20 74%,
+    #825910 100%
+  );
+  background-size: 200% 200%;
+  color: #FFFDF9;
+  text-shadow: 0 1px 2px rgba(60, 38, 4, 0.48);
+  border: 1px solid rgba(243, 227, 190, 0.55);
+  animation: goldShimmer 6s ease infinite;
+}
+
+.gold-border-double {
+  border: 2px solid rgba(179, 135, 40, 0.65);
+  box-shadow:
+    inset 0 0 0 5px #FFFDF9,
+    inset 0 0 0 6.5px rgba(179, 135, 40, 0.42),
+    0 22px 60px -15px rgba(138, 96, 18, 0.20);
+}
+
+/* Subtle paper grain & filigree texture */
+.ivory-card-surface {
+  background-color: #FFFDF9;
+  background-image:
+    radial-gradient(at 15% 15%, rgba(198, 154, 50, 0.08) 0px, transparent 50%),
+    radial-gradient(at 85% 85%, rgba(198, 154, 50, 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(255, 253, 249, 0.94) 0px, rgba(250, 246, 238, 0.98) 100%);
+}
+
+@keyframes goldShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Gentle Sway for Top-Corner Half-Draped Curtains Inside the Box Before Opening */
+@keyframes cornerCurtainSwayLeft {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(-1.6deg) scale(1.02, 1.01);
+  }
+}
+
+@keyframes cornerCurtainSwayRight {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(1.6deg) scale(1.02, 1.01);
+  }
+}
+
+.corner-curtain-idle-left {
+  transform-origin: top left;
+  animation: cornerCurtainSwayLeft 4.5s ease-in-out infinite;
+  transition: transform 1.65s cubic-bezier(0.22, 1, 0.36, 1), opacity 1.4s ease;
+}
+
+.corner-curtain-idle-right {
+  transform-origin: top right;
+  animation: cornerCurtainSwayRight 4.5s ease-in-out infinite;
+  transition: transform 1.65s cubic-bezier(0.22, 1, 0.36, 1), opacity 1.4s ease;
+}
+
+.corner-curtain-opened-left {
+  animation: none;
+  transform: translate(-85%, -35%) rotate(14deg) scale(0.65);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.corner-curtain-opened-right {
+  animation: none;
+  transform: translate(85%, -35%) rotate(-14deg) scale(0.65);
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+}
+
+@keyframes birdGlideLeft {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(-2deg) scale(1);
+  }
+  50% {
+    transform: translate(8px, -10px) rotate(3deg) scale(1.03);
+  }
+}
+
+@keyframes birdGlideRight {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(2deg) scale(1);
+  }
+  50% {
+    transform: translate(-8px, -10px) rotate(-3deg) scale(1.03);
+  }
+}
+
+@keyframes wingFlutter {
+  0%, 100% {
+    transform: scaleY(1) rotate(0deg);
+  }
+  50% {
+    transform: scaleY(0.84) rotate(-6deg);
+  }
+}
+
+@keyframes pulseHalo {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.85;
+  }
+}
+
+@keyframes eqBar1 {
+  0%, 100% { height: 6px; }
+  50% { height: 20px; }
+}
+@keyframes eqBar2 {
+  0%, 100% { height: 18px; }
+  33% { height: 7px; }
+  66% { height: 22px; }
+}
+@keyframes eqBar3 {
+  0%, 100% { height: 10px; }
+  40% { height: 24px; }
+  80% { height: 8px; }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-bird-left {
+  animation: birdGlideLeft 5.5s ease-in-out infinite;
+}
+
+.animate-bird-right {
+  animation: birdGlideRight 5.5s ease-in-out infinite;
+}
+
+.animate-wing {
+  transform-origin: center bottom;
+  animation: wingFlutter 1.8s ease-in-out infinite;
+}
+
+.animate-halo {
+  animation: pulseHalo 4s ease-in-out infinite;
+}
+
+.eq-bar-1 {
+  animation: eqBar1 0.9s ease-in-out infinite;
+}
+.eq-bar-2 {
+  animation: eqBar2 0.75s ease-in-out infinite;
+}
+.eq-bar-3 {
+  animation: eqBar3 1.05s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF6EE;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #C69A32, #8A6012);
+  border-radius: 9999px;
+}
